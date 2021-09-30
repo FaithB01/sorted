@@ -10,6 +10,7 @@ SortedLinkedList::SortedLinkedList()
   length = 0;
   head = NULL;
   currentPos = NULL;
+  //int item;
 }
 
 int SortedLinkedList::getLength() const
@@ -86,7 +87,7 @@ void SortedLinkedList::deleteItem(ItemType item)
   }
 }
 
-int SortedLinkedList::searchItem(ItemType &item)
+int SortedLinkedList::searchItem(ItemType item)
 {
   ListNode *loc = head;
   while (loc->next != NULL && (item.compareTo((loc->next)->item) != EQUAL))
@@ -99,14 +100,20 @@ int SortedLinkedList::searchItem(ItemType &item)
   }
   else
   {
-    return item;
+
+    return 0;
   }
 }
 
 ItemType SortedLinkedList::getNextItem()
 {
-  currentPos++;
-  return item[currentPos];
+  ItemType item;
+  if (currentPos == NULL)
+    currentPos = head;
+  item = currentPos->item;
+  currentPos = currentPos->next;
+  //currentPos++;
+  return item;
 }
 
 void SortedLinkedList::resetList()

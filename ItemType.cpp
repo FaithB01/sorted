@@ -6,14 +6,15 @@ using namespace std;
 
 ItemType::ItemType() {}
 
+int item;
 Comparison ItemType::compareTo(ItemType item)
 {
-  if (getValue() > item.getValue())
+  if (value > item.value)
   {
 
     return GREATER;
   }
-  else if (getValue() < item.getValue())
+  else if (value < item.value)
   {
 
     return LESS;
@@ -27,7 +28,8 @@ Comparison ItemType::compareTo(ItemType item)
 
 int ItemType::getValue() const
 {
-  return value;
+  cout << value << "" << endl;
+  //return value;
 }
 
 void ItemType::initialize(int num)
