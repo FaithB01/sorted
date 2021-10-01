@@ -2,19 +2,20 @@
 #include "ItemType.h"
 #include <stdio.h>
 
+#include <windows.h>
+
 using namespace std;
 
 ItemType::ItemType() {}
 
-int item;
 Comparison ItemType::compareTo(ItemType item)
 {
-  if (value > item.value)
+  if (getValue() > item.getValue())
   {
 
     return GREATER;
   }
-  else if (value < item.value)
+  else if (getValue() < item.getValue())
   {
 
     return LESS;
@@ -28,8 +29,7 @@ Comparison ItemType::compareTo(ItemType item)
 
 int ItemType::getValue() const
 {
-  cout << value << "" << endl;
-  //return value;
+  return value;
 }
 
 void ItemType::initialize(int num)
