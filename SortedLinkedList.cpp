@@ -100,8 +100,8 @@ int SortedLinkedList::searchItem(ItemType item)
   }
   else
   {
-
-    return 0;
+    int item;
+    return item;
   }
 }
 

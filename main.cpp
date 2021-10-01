@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <fstream>
 #include <cstddef>
-#include "SortedLinkedList.h"
+#include "SortedLinkedList.cpp"
 
 using namespace std;
 
